@@ -1,7 +1,7 @@
 {
-  "name": "route-manifest-parser",
+  "name": "route-manifest",
   "version": "0.0.0",
-  "repository": "lukeed/route-manifest-parser",
+  "repository": "lukeed/route-manifest",
   "description": "WIP",
   "unpkg": "dist/manifest.min.js",
   "module": "dist/manifest.mjs",
