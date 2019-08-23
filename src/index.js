@@ -1,21 +1,16 @@
 import toRegExp from 'regexparam';
 
-export default function (manifest, uri, toMerge) {
+export default function (manifest, uri, wCommon) {
 	var k,
-		tmp = manifest['*'] || [],
+		tmp = wCommon && manifest['*'] || [],
 		headers = tmp.headers || [],
 		files = tmp.files || tmp;
 
 	for (k in manifest) {
-		if (k !== '*' && toRegExp(k).pattern.test(uri)) {
+		if (k != '*' && toRegExp(k).pattern.test(uri)) {
 			tmp = manifest[k];
-			if (toMerge) {
-				files = files.concat(tmp.files || tmp);
-				headers = headers.concat(tmp.headers || []);
-			} else {
-				files = tmp.files || tmp;
-				headers = tmp.headers || [];
-			}
+			files = files.concat(tmp.files || tmp);
+			headers = headers.concat(tmp.headers || []);
 			break;
 		}
 	}
