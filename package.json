@@ -20,7 +20,7 @@
     "node": ">= 6"
   },
   "scripts": {
-    "build": "node builder",
+    "build": "node bin",
     "pretest": "npm run build",
     "test": "tape test/*.js | tap-spec"
   },

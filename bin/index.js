@@ -3,7 +3,7 @@ const mkdir = require('mk-dirs');
 const pretty = require('pretty-bytes');
 const { minify } = require('terser');
 const sizer = require('gzip-size');
-const pkg = require('./package');
+const pkg = require('../package');
 
 const ESM = fs.readFileSync('src/index.js', 'utf8');
 const regexparam = require('regexparam').toString();
@@ -26,7 +26,8 @@ mkdir('dist').then(() => {
 	);
 
 	// Minify & print gzip-size
-	const { code } = minify(INLINED, { toplevel:true, compress:{ passes:10 } });
+	const compress = { passes: 10 };
+	const { code } = minify(INLINED, { toplevel:true, compress });
 	console.log(`> gzip size: ${pretty(sizer.sync(code))}`);
 
 	// Write UMD bundle
