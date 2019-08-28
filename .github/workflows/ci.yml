@@ -9,11 +9,11 @@ jobs:
     strategy:
       matrix:
         nodejs: [8, 10, 12]
-
     steps:
     - uses: actions/checkout@master
       with:
         fetch-depth: 1
+
     - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.nodejs }}
@@ -21,10 +21,10 @@ jobs:
     - name: Install
       run: |
         npm install
-        npm install -g nyc@13
+        npm install -g nyc
 
-    - name: Test
-      run: nyc npm test
+    - name: Test w/ Coverage
+      run: nyc --include=src npm test
 
     - name: Report
       if: matrix.nodejs >= 12
