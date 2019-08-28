@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "repository": "lukeed/route-manifest",
   "description": "WIP",
-  "unpkg": "dist/manifest.min.js",
-  "module": "dist/manifest.mjs",
-  "main": "dist/manifest.js",
-  "umd:name": "manifest",
+  "unpkg": "dist/rmanifest.min.js",
+  "module": "dist/rmanifest.mjs",
+  "main": "dist/rmanifest.js",
+  "umd:name": "rmanifest",
   "license": "MIT",
   "author": {
     "name": "Luke Edwards",
@@ -24,7 +24,6 @@
     "pretest": "npm run build",
     "test": "tape test/*.js | tap-spec"
   },
-  "keywords": [],
   "dependencies": {
     "regexparam": "^1.3.0"
   },
@@ -35,5 +34,11 @@
     "tap-spec": "5.0.0",
     "tape": "4.11.0",
     "terser": "4.1.4"
-  }
+  },
+  "keywords": [
+    "route",
+    "runtime",
+    "manifest",
+    "parser"
+  ]
 }
