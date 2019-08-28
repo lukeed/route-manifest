@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "umd:name": "rmanifest",
   "repository": "lukeed/route-manifest",
-  "description": "WIP",
+  "description": "A tiny (412B) runtime to retrieve the correct entry from a Route Manifest file",
   "unpkg": "dist/rmanifest.min.js",
   "module": "dist/rmanifest.mjs",
   "main": "dist/rmanifest.js",
