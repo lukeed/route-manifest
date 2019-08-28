@@ -1,5 +1,5 @@
-const test = require('tape');
-const parse = require('../dist/manifest');
+import test from 'tape';
+import parse from '../src';
 
 test('exports', t => {
 	t.is(typeof parse, 'function');
