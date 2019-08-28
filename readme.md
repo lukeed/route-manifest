@@ -2,7 +2,7 @@
 
 > A tiny (412B) runtime to retrieve the correct entry from a Route Manifest file.
 
-This is the runtime/client-side component for [`webpack-route-manifest](https://github.com/lukeed/webpack-route-manifest).<br>
+This is the runtime/client-side component for [`webpack-route-manifest`](https://github.com/lukeed/webpack-route-manifest).<br>
 It is **required** that your manifest's routes be [sorted by specificity](https://github.com/lukeed/route-sort#specificity), which _is_ the webpack plugin's default setting.
 
 > **Important:** This `route-manifest` _does not_ fetch files or apply headers on your behalf!
@@ -61,14 +61,14 @@ fetch('/manifest.json').then(r => r.json()).then(data => {
 ### rmanifest(contents, uri, withCommons)
 Returns: `{ files: Array, headers: Array }`
 
-Returns an object containing `files` and `headers` keys, both of which will contain items that match your Manifest file's contents.
+Returns an object containing `files` and `headers` keys, both of which will be arrays. The arrays' items are copied from your Manifest file directly, so you will (presumably) already know the shape of your data.
 
 
 #### contents
 Type: `Object`
 
 The Manifest file's contents.<br>
-Any format returned by [`webpack-route-manifest](https://github.com/lukeed/webpack-route-manifest) is valid.
+Any format returned by [`webpack-route-manifest`](https://github.com/lukeed/webpack-route-manifest) is valid.
 
 > **Important:** The route pattern keys [must be sorted](https://github.com/lukeed/webpack-route-manifest#optionssort) for matching correctness.
 
@@ -77,7 +77,7 @@ Type: `String`
 
 The URL for which you want to find files or headers.
 
-> **Note:** This should _only_ be the `pathname` segment of a URL, unless your patterns are explicitly looking for other segments.
+> **Note:** _Only_ include the `pathname` segment of a URL, unless a pattern is explicitly looking for other segments.
 
 #### withCommons
 Type: `Boolean`<br>
@@ -93,8 +93,8 @@ When `false`, this module will _only_ return the entry _specific to_ the request
 ## Related
 
 * [webpack-route-manifest](https://github.com/lukeed/webpack-route-manifest) – generate a Route Manifest file for your webpack build
-* [route-sort](https://github.com/lukeed/route-sort) – the route pattern sorter required for safe sequential matching
 * [quicklink](https://github.com/GoogleChromeLabs/quicklink) – preloading utility that reacts to connection speed and browser support
+* [route-sort](https://github.com/lukeed/route-sort) – the route pattern sorter required for safe sequential matching
 
 
 ## License
