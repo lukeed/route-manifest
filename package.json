@@ -1,6 +1,6 @@
 {
   "name": "route-manifest",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "umd:name": "rmanifest",
   "repository": "lukeed/route-manifest",
   "description": "A tiny (412B) runtime to retrieve the correct entry from a Route Manifest file",
