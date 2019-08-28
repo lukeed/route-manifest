@@ -1,12 +1,13 @@
 {
   "name": "route-manifest",
   "version": "0.0.1",
+  "umd:name": "rmanifest",
   "repository": "lukeed/route-manifest",
   "description": "WIP",
   "unpkg": "dist/rmanifest.min.js",
   "module": "dist/rmanifest.mjs",
   "main": "dist/rmanifest.js",
-  "umd:name": "rmanifest",
+  "types": "rmanifest.d.ts",
   "license": "MIT",
   "author": {
     "name": "Luke Edwards",
@@ -14,6 +15,7 @@
     "url": "https://lukeed.com"
   },
   "files": [
+    "*.d.ts",
     "dist"
   ],
   "engines": {
