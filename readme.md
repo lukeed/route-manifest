@@ -24,7 +24,7 @@ $ npm install --save route-manifest
 ## Usage
 
 ```js
-import { preload } from 'quicklink';
+import { prefetch } from 'quicklink';
 import rmanifest from 'route-manifest';
 
 // Manually fetch Manifest file contents
@@ -41,7 +41,7 @@ fetch('/manifest.json').then(r => r.json()).then(data => {
 
   const files = new Set();
 
-  // We want to preload these pages' assets
+  // We want to prefetch these pages' assets
   ['/blog', '/about', '/features'].forEach(str => {
     let entry = rmanifest(data, str);
     entry.files.forEach(x => files.add(x.href));
@@ -51,7 +51,7 @@ fetch('/manifest.json').then(r => r.json()).then(data => {
   //   The `quicklink` module will do the actual prefetching!
   //   We just have have to give it a file path, or an array
   //   of file paths in this case~!
-  return preload([...files]);
+  return prefetch([...files]);
 });
 ```
 
